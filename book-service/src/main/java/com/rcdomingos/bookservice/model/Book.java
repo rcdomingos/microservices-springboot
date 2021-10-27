@@ -1,16 +1,32 @@
 package com.rcdomingos.bookservice.model;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
 public class Book implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "author", nullable = false, length = 180)
     private String author;
+
+    @Column(name = "launch_date", nullable = false)
     private LocalDate launchDate;
+
+    @Column(nullable = false)
     private Double price;
+
+    @Column(nullable = false)
     private String title;
+
+    @Transient //não vai para o banco
     private String currency;
+
+    @Transient
     private String environment;
 
     public Book() {
