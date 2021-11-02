@@ -10,3 +10,4 @@ Desenvolvimento de micro serviços com Spring Cloud e Spring Boot.
 - Feign
 - Service Discovery e Service Registry com Eureka
 - Load Balancing com Eureka
+- Api Gateway com Spring Cloud Routing
