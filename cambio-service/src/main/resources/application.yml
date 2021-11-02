@@ -11,9 +11,9 @@ spring:
     name: cambio-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/cambio_service?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://192.168.1.15:3306/cambio_service?useTimezone=true&serverTimezone=UTC
     username: root
-    password: RootPassword99
+    password: root
   jpa:
     hibernate:
       ddl-auto: update
@@ -22,7 +22,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
   flyway:
-    url: jdbc:mysql://localhost:3306/
+    url: jdbc:mysql://192.168.1.15:3306/
     schemas: cambio_service
     user: root
-    password: RootPassword99
+    password: root

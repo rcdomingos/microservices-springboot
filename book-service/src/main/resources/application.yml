@@ -5,15 +5,22 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+resilience4j:
+  retry:
+    instances:
+      foo-bar:
+        max-attempts: 5 #criar uma configuração especifica
+        wait-duration: 1s
+        #enable-exponential-backoff: true #cada requisiçao tem um tempo
 
 spring:
   application:
     name: book-service
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/book_service?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://192.168.1.15:3306/book_service?useTimezone=true&serverTimezone=UTC
     username: root
-    password: RootPassword99
+    password: root
   jackson:
     default-property-inclusion: NON_NULL
     serialization:
@@ -26,7 +33,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
   flyway:
-    url: jdbc:mysql://localhost:3306/
+    url: jdbc:mysql://192.168.1.15:3306/
     schemas: book_service
     user: root
-    password: RootPassword99
+    password: root

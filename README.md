@@ -11,3 +11,4 @@ Desenvolvimento de micro serviços com Spring Cloud e Spring Boot.
 - Service Discovery e Service Registry com Eureka
 - Load Balancing com Eureka
 - Api Gateway com Spring Cloud Routing
+- Circuit Breaker com [Resilience4j](https://resilience4j.readme.io/) 
