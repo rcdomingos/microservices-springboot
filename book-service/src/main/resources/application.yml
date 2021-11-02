@@ -12,6 +12,15 @@ resilience4j:
         max-attempts: 5 #criar uma configuração especifica
         wait-duration: 1s
         #enable-exponential-backoff: true #cada requisiçao tem um tempo
+  ratelimiter:
+    instances:
+      default:
+        limit-for-period: 2 # 2 requisições a cada 10 segundos
+        limit-refresh-period: 10s
+  bulkhead:
+    instances:
+      default:
+        max-concurrent-calls: 10
 
 spring:
   application:
