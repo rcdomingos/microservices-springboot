@@ -4,6 +4,8 @@ import io.github.resilience4j.bulkhead.annotation.Bulkhead;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-
+@Tag(name = "Foo bar")
 @RestController
 @RequestMapping("book-service")
 public class FooBarController {
@@ -21,6 +23,7 @@ public class FooBarController {
 
     // Retry -> usado para configurar tentativas de conexão quando gera falha
     // fallback -> metodo que sera chamado apos as tentativas e continuar a falha
+    @Operation(summary = "foo bar test")
     @GetMapping("/foo-bar")
     @Retry(name = "foo-bar", fallbackMethod = "myFallbackMethod")
     public String fooBar() {
