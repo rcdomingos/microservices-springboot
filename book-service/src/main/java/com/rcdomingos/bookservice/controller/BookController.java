@@ -31,7 +31,7 @@ public class BookController {
         if (book.isEmpty()) throw new IllegalArgumentException("Book Not Found");
         String port = environment.getProperty("local.server.port");
         var cambio = proxy.getCambio(book.get().getPrice(), "USD", currency);
-        book.get().setEnvironment(port);
+        book.get().setEnvironment("Book port: " + port + "| Cambio poty: " + cambio.getEnvironment() );
         book.get().setPrice(cambio.getConvertedValue());
 
         return book.get();

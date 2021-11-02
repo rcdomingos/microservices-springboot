@@ -9,3 +9,4 @@ Desenvolvimento de micro serviços com Spring Cloud e Spring Boot.
 - Spring Boot Actuator
 - Feign
 - Service Discovery e Service Registry com Eureka
+- Load Balancing com Eureka
